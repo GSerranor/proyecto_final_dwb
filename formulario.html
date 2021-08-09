@@ -1,26 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <head>
+        <meta charset="utf-8">
         <title>Formulario Contacto</title>
         <meta name="Contact form" content="Contact form web">
-        <meta charset="utf-8">
         <meta name="Contact form" content="index,follow">
         <link rel="icon" href="icons/webicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/styles.css">
+        <script src="scripts/validacion.js"></script>
         <!--Desarrollado por Gonzalo Serrano Ruiz-->
         <!--He usado frames por demostrar el conocimiento adquirido aunq esta desaconsejado-->
     </head>
-    <frameset rows=25%,*,10%>
-        <frame src="form.html" name="frame2">
-        <frame src="index.html" name="frame2">
-    </frameset>
-    <noframes>
         <body>
-            <form action="" method="POST" target="_parent">
-                <p>Nombre: <input placeholder="Introduce tu nombre" type="text" name="nombre" size="40"></p>
-                <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
+            <form action="validar()" method="POST" target="_parent">
+                <p id="name">Nombre: <input placeholder="Introduce tu nombre" title="nombre" type="text" name="nombre" size="40" id="nombre"></p>
+                <p id="year">Año de nacimiento: <input type="number" name="nacido" min="1900" id="anio" title="año"></p>
                 <p>Selecciona tipo:
-                    <select value="Ambito de categoría">
+                    <select value="Ambito de categoría" title="Selecciona categoría">
                         <optgroup label="Tornillería">
                             <option>Cabeza plana</option>
                             <option>Estrellado</option>
@@ -39,19 +36,18 @@
                     </select>
                 </p>
                 <p>Sexo:
-                    <input type="radio" name="hm" value="h"> Hombre
-                    <input type="radio" name="hm" value="m"> Mujer
-                    <input type="radio" name="hm" value="m" checked> No contestar
+                    <input title="Hombre" type="radio" name="hm" value="h"> Hombre
+                    <input title="Mujer" type="radio" name="hm" value="m"> Mujer
+                    <input title="No contestar" type="radio" name="hm" value="m" checked> No contestar
                 </p>
                 <p>Tipo:
-                    <input type="checkbox" name="hm" value="h"> Reclamación
-                    <input type="checkbox" name="hm" value="m"> Duda
+                    <input title="Reclamación" type="checkbox" name="hm" value="h"> Reclamación
+                    <input title="Duda" type="checkbox" name="hm" value="m"> Duda
                 </p>
                 <p>
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Borrar">
+                    <input title="Enviar" type="button" value="Enviar" onclick="validar();">
+                    <input title="Resetear" type="reset" value="Borrar">
                 </p>
             </form>
         </body>
-    </noframes>
 </html>
